@@ -1,0 +1,4 @@
+interface:
+  display_name: "Onboard Castrook customers"
+  short_description: "Create profiles and secure customer connection links"
+  default_prompt: "Use $castrook-onboard-customers to connect a customer's channels through a profile and private hosted onboarding."

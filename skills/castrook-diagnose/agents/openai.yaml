@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diagnose Castrook delivery"
+  short_description: "Inspect delivery, access, usage and unavailable metrics"
+  default_prompt: "Use $castrook-diagnose to inspect this publishing failure and explain the next authorized recovery step."

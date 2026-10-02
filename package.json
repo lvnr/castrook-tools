@@ -1,0 +1,15 @@
+{
+  "name": "castrook-tools",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Public Castrook SDKs, CLI, integration skills and machine-readable API guides",
+  "workspaces": ["packages/castrook-sdk"],
+  "scripts": {
+    "build": "npm run build --workspace castrook",
+    "test": "vitest run",
+    "check": "npm run build && npm test && node scripts/check-contract.mjs",
+    "pack": "npm pack --workspace castrook --pack-destination dist"
+  },
+  "devDependencies": { "vitest": "4.1.11" }
+}

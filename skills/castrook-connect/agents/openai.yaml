@@ -1,0 +1,4 @@
+interface:
+  display_name: "Connect to Castrook"
+  short_description: "Authenticate agents and verify scoped API access"
+  default_prompt: "Use $castrook-connect to connect this agent to Castrook in Test mode and verify account and usage reads."

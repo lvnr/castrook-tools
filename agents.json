@@ -1,0 +1,1265 @@
+{
+  "name": "Castrook",
+  "version": "2026-10-02",
+  "package_version": "0.4.0",
+  "canonical": "https://castrook.com/agents.json",
+  "mcp": {
+    "endpoint": "https://castrook.com/mcp",
+    "resource": "https://castrook.com/mcp",
+    "transport": "streamable-http",
+    "authentication": "oauth2",
+    "protected_resource_metadata": "https://castrook.com/.well-known/oauth-protected-resource/mcp",
+    "tools": [
+      {
+        "name": "list_accounts",
+        "operation_id": "listAccounts",
+        "method": "GET",
+        "path": "/api/v1/accounts",
+        "summary": "List connected accounts",
+        "api_key_scopes": [
+          "accounts:read"
+        ],
+        "oauth_scopes": [
+          "accounts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts/get"
+      },
+      {
+        "name": "create_test_account",
+        "operation_id": "createTestAccount",
+        "method": "POST",
+        "path": "/api/v1/accounts",
+        "summary": "Create a sandbox account",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts/post"
+      },
+      {
+        "name": "disconnect_account",
+        "operation_id": "disconnectAccount",
+        "method": "DELETE",
+        "path": "/api/v1/accounts/{id}",
+        "summary": "Disconnect an account",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}/delete"
+      },
+      {
+        "name": "assign_account_profile",
+        "operation_id": "assignAccountProfile",
+        "method": "PATCH",
+        "path": "/api/v1/accounts/{id}",
+        "summary": "Move an account to a customer profile",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}/patch"
+      },
+      {
+        "name": "get_publishing_options",
+        "operation_id": "getPublishingOptions",
+        "method": "GET",
+        "path": "/api/v1/accounts/{id}/publishing-options",
+        "summary": "Get current creator publishing controls",
+        "api_key_scopes": [
+          "accounts:read"
+        ],
+        "oauth_scopes": [
+          "accounts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}~1publishing-options/get"
+      },
+      {
+        "name": "list_profiles",
+        "operation_id": "listProfiles",
+        "method": "GET",
+        "path": "/api/v1/profiles",
+        "summary": "List customer profiles",
+        "api_key_scopes": [
+          "profiles:read"
+        ],
+        "oauth_scopes": [
+          "profiles:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles/get"
+      },
+      {
+        "name": "create_profile",
+        "operation_id": "createProfile",
+        "method": "POST",
+        "path": "/api/v1/profiles",
+        "summary": "Create a customer profile",
+        "api_key_scopes": [
+          "profiles:write"
+        ],
+        "oauth_scopes": [
+          "profiles:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles/post"
+      },
+      {
+        "name": "get_profile",
+        "operation_id": "getProfile",
+        "method": "GET",
+        "path": "/api/v1/profiles/{id}",
+        "summary": "Retrieve a customer profile",
+        "api_key_scopes": [
+          "profiles:read"
+        ],
+        "oauth_scopes": [
+          "profiles:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles~1{id}/get"
+      },
+      {
+        "name": "update_profile",
+        "operation_id": "updateProfile",
+        "method": "PATCH",
+        "path": "/api/v1/profiles/{id}",
+        "summary": "Update a customer profile",
+        "api_key_scopes": [
+          "profiles:write"
+        ],
+        "oauth_scopes": [
+          "profiles:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles~1{id}/patch"
+      },
+      {
+        "name": "delete_profile",
+        "operation_id": "deleteProfile",
+        "method": "DELETE",
+        "path": "/api/v1/profiles/{id}",
+        "summary": "Delete an unused customer profile",
+        "api_key_scopes": [
+          "profiles:write"
+        ],
+        "oauth_scopes": [
+          "profiles:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles~1{id}/delete"
+      },
+      {
+        "name": "create_connection_session",
+        "operation_id": "createConnectSession",
+        "method": "POST",
+        "path": "/api/v1/connect-sessions",
+        "summary": "Create a hosted customer connection link",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1connect-sessions/post"
+      },
+      {
+        "name": "get_connection_session",
+        "operation_id": "getConnectSession",
+        "method": "GET",
+        "path": "/api/v1/connect-sessions/{id}",
+        "summary": "Retrieve connection progress",
+        "api_key_scopes": [
+          "accounts:read"
+        ],
+        "oauth_scopes": [
+          "accounts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1connect-sessions~1{id}/get"
+      },
+      {
+        "name": "revoke_connection_session",
+        "operation_id": "revokeConnectSession",
+        "method": "DELETE",
+        "path": "/api/v1/connect-sessions/{id}",
+        "summary": "Revoke a customer connection link",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1connect-sessions~1{id}/delete"
+      },
+      {
+        "name": "list_posts",
+        "operation_id": "listPosts",
+        "method": "GET",
+        "path": "/api/v1/posts",
+        "summary": "List posts",
+        "api_key_scopes": [
+          "posts:read"
+        ],
+        "oauth_scopes": [
+          "posts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts/get"
+      },
+      {
+        "name": "get_post",
+        "operation_id": "getPost",
+        "method": "GET",
+        "path": "/api/v1/posts/{id}",
+        "summary": "Retrieve post and destination results",
+        "api_key_scopes": [
+          "posts:read"
+        ],
+        "oauth_scopes": [
+          "posts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts~1{id}/get"
+      },
+      {
+        "name": "create_post",
+        "operation_id": "createPost",
+        "method": "POST",
+        "path": "/api/v1/posts",
+        "summary": "Queue or schedule a post",
+        "api_key_scopes": [
+          "posts:write"
+        ],
+        "oauth_scopes": [
+          "posts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": true,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts/post"
+      },
+      {
+        "name": "cancel_post",
+        "operation_id": "cancelPost",
+        "method": "DELETE",
+        "path": "/api/v1/posts/{id}",
+        "summary": "Cancel queued or scheduled delivery",
+        "api_key_scopes": [
+          "posts:write"
+        ],
+        "oauth_scopes": [
+          "posts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts~1{id}/delete"
+      },
+      {
+        "name": "list_media",
+        "operation_id": "listMedia",
+        "method": "GET",
+        "path": "/api/v1/media",
+        "summary": "List uploaded media",
+        "api_key_scopes": [
+          "media:read"
+        ],
+        "oauth_scopes": [
+          "media:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media/get"
+      },
+      {
+        "name": "get_media",
+        "operation_id": "getMedia",
+        "method": "GET",
+        "path": "/api/v1/media/{id}",
+        "summary": "Retrieve uploaded media metadata",
+        "api_key_scopes": [
+          "media:read"
+        ],
+        "oauth_scopes": [
+          "media:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}/get"
+      },
+      {
+        "name": "create_media_upload",
+        "operation_id": "createMediaUpload",
+        "method": "POST",
+        "path": "/api/v1/media/uploads",
+        "summary": "Create a direct upload",
+        "api_key_scopes": [
+          "media:write"
+        ],
+        "oauth_scopes": [
+          "media:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1uploads/post"
+      },
+      {
+        "name": "complete_media_upload",
+        "operation_id": "completeMediaUpload",
+        "method": "POST",
+        "path": "/api/v1/media/{id}/complete",
+        "summary": "Verify and freeze an uploaded file",
+        "api_key_scopes": [
+          "media:write"
+        ],
+        "oauth_scopes": [
+          "media:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}~1complete/post"
+      },
+      {
+        "name": "delete_media",
+        "operation_id": "deleteMedia",
+        "method": "DELETE",
+        "path": "/api/v1/media/{id}",
+        "summary": "Delete unused uploaded media",
+        "api_key_scopes": [
+          "media:write"
+        ],
+        "oauth_scopes": [
+          "media:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}/delete"
+      },
+      {
+        "name": "get_analytics_summary",
+        "operation_id": "getAnalyticsSummary",
+        "method": "GET",
+        "path": "/api/v1/analytics/summary",
+        "summary": "Aggregate post performance snapshots",
+        "api_key_scopes": [
+          "analytics:read"
+        ],
+        "oauth_scopes": [
+          "analytics:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1analytics~1summary/get"
+      },
+      {
+        "name": "list_post_analytics",
+        "operation_id": "listPostAnalytics",
+        "method": "GET",
+        "path": "/api/v1/analytics/posts",
+        "summary": "List post performance snapshots",
+        "api_key_scopes": [
+          "analytics:read"
+        ],
+        "oauth_scopes": [
+          "analytics:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1analytics~1posts/get"
+      },
+      {
+        "name": "refresh_post_analytics",
+        "operation_id": "refreshPostAnalytics",
+        "method": "POST",
+        "path": "/api/v1/posts/{id}/analytics/refresh",
+        "summary": "Refresh post performance",
+        "api_key_scopes": [
+          "analytics:write"
+        ],
+        "oauth_scopes": [
+          "analytics:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts~1{id}~1analytics~1refresh/post"
+      },
+      {
+        "name": "list_comments",
+        "operation_id": "listComments",
+        "method": "GET",
+        "path": "/api/v1/comments",
+        "summary": "List comments for a published destination",
+        "api_key_scopes": [
+          "comments:read"
+        ],
+        "oauth_scopes": [
+          "comments:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1comments/get"
+      },
+      {
+        "name": "reply_to_comment",
+        "operation_id": "replyComment",
+        "method": "POST",
+        "path": "/api/v1/comments",
+        "summary": "Reply to a comment",
+        "api_key_scopes": [
+          "comments:write"
+        ],
+        "oauth_scopes": [
+          "comments:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1comments/post"
+      },
+      {
+        "name": "list_webhooks",
+        "operation_id": "listWebhooks",
+        "method": "GET",
+        "path": "/api/v1/webhooks",
+        "summary": "List event endpoints",
+        "api_key_scopes": [
+          "webhooks:read"
+        ],
+        "oauth_scopes": [
+          "webhooks:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1webhooks/get"
+      },
+      {
+        "name": "create_webhook",
+        "operation_id": "createWebhook",
+        "method": "POST",
+        "path": "/api/v1/webhooks",
+        "summary": "Create an event endpoint",
+        "api_key_scopes": [
+          "webhooks:write"
+        ],
+        "oauth_scopes": [
+          "webhooks:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1webhooks/post"
+      },
+      {
+        "name": "disable_webhook",
+        "operation_id": "disableWebhook",
+        "method": "DELETE",
+        "path": "/api/v1/webhooks/{id}",
+        "summary": "Disable an event endpoint",
+        "api_key_scopes": [
+          "webhooks:write"
+        ],
+        "oauth_scopes": [
+          "webhooks:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1webhooks~1{id}/delete"
+      },
+      {
+        "name": "list_deliveries",
+        "operation_id": "listDeliveries",
+        "method": "GET",
+        "path": "/api/v1/deliveries",
+        "summary": "Inspect webhook delivery attempts",
+        "api_key_scopes": [
+          "webhooks:read"
+        ],
+        "oauth_scopes": [
+          "webhooks:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1deliveries/get"
+      },
+      {
+        "name": "list_request_logs",
+        "operation_id": "listRequestLogs",
+        "method": "GET",
+        "path": "/api/v1/logs",
+        "summary": "List API request logs",
+        "api_key_scopes": [
+          "logs:read"
+        ],
+        "oauth_scopes": [
+          "logs:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1logs/get"
+      },
+      {
+        "name": "get_usage",
+        "operation_id": "getUsage",
+        "method": "GET",
+        "path": "/api/v1/usage",
+        "summary": "Get current usage and allowances",
+        "api_key_scopes": [],
+        "oauth_scopes": [
+          "usage:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1usage/get"
+      }
+    ],
+    "resources": [
+      "castrook://guides/mcp",
+      "castrook://guides/cli",
+      "castrook://guides/typescript",
+      "castrook://guides/python",
+      "castrook://guides/skills",
+      "castrook://guides/workflows",
+      "castrook://manifest"
+    ],
+    "prompts": [
+      "publish_safely",
+      "onboard_customer"
+    ],
+    "excluded_operations": {
+      "acceptAnalyticsPolicy": "Account-owner legal acceptance remains an explicit owner workflow",
+      "downloadMedia": "Binary content uses authenticated REST or SDK download",
+      "headMedia": "Binary content metadata uses authenticated REST"
+    }
+  },
+  "rest": {
+    "resource": "https://castrook.com/api/v1",
+    "protected_resource_metadata": "https://castrook.com/.well-known/oauth-protected-resource/api/v1",
+    "openapi": "https://castrook.com/api/openapi",
+    "operations": [
+      {
+        "operation_id": "acceptAnalyticsPolicy",
+        "method": "POST",
+        "path": "/api/v1/accounts/{id}/analytics-consent",
+        "summary": "Record account-owner acceptance for YouTube performance",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}~1analytics-consent/post"
+      },
+      {
+        "operation_id": "listProfiles",
+        "method": "GET",
+        "path": "/api/v1/profiles",
+        "summary": "List customer profiles",
+        "api_key_scopes": [
+          "profiles:read"
+        ],
+        "oauth_scopes": [
+          "profiles:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles/get"
+      },
+      {
+        "operation_id": "createProfile",
+        "method": "POST",
+        "path": "/api/v1/profiles",
+        "summary": "Create a customer profile",
+        "api_key_scopes": [
+          "profiles:write"
+        ],
+        "oauth_scopes": [
+          "profiles:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles/post"
+      },
+      {
+        "operation_id": "getProfile",
+        "method": "GET",
+        "path": "/api/v1/profiles/{id}",
+        "summary": "Retrieve a customer profile",
+        "api_key_scopes": [
+          "profiles:read"
+        ],
+        "oauth_scopes": [
+          "profiles:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles~1{id}/get"
+      },
+      {
+        "operation_id": "updateProfile",
+        "method": "PATCH",
+        "path": "/api/v1/profiles/{id}",
+        "summary": "Update a customer profile",
+        "api_key_scopes": [
+          "profiles:write"
+        ],
+        "oauth_scopes": [
+          "profiles:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles~1{id}/patch"
+      },
+      {
+        "operation_id": "deleteProfile",
+        "method": "DELETE",
+        "path": "/api/v1/profiles/{id}",
+        "summary": "Delete an unused customer profile",
+        "api_key_scopes": [
+          "profiles:write"
+        ],
+        "oauth_scopes": [
+          "profiles:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1profiles~1{id}/delete"
+      },
+      {
+        "operation_id": "createConnectSession",
+        "method": "POST",
+        "path": "/api/v1/connect-sessions",
+        "summary": "Create a hosted customer connection link",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1connect-sessions/post"
+      },
+      {
+        "operation_id": "getConnectSession",
+        "method": "GET",
+        "path": "/api/v1/connect-sessions/{id}",
+        "summary": "Retrieve connection progress",
+        "api_key_scopes": [
+          "accounts:read"
+        ],
+        "oauth_scopes": [
+          "accounts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1connect-sessions~1{id}/get"
+      },
+      {
+        "operation_id": "revokeConnectSession",
+        "method": "DELETE",
+        "path": "/api/v1/connect-sessions/{id}",
+        "summary": "Revoke a customer connection link",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1connect-sessions~1{id}/delete"
+      },
+      {
+        "operation_id": "listAccounts",
+        "method": "GET",
+        "path": "/api/v1/accounts",
+        "summary": "List connected accounts",
+        "api_key_scopes": [
+          "accounts:read"
+        ],
+        "oauth_scopes": [
+          "accounts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts/get"
+      },
+      {
+        "operation_id": "createTestAccount",
+        "method": "POST",
+        "path": "/api/v1/accounts",
+        "summary": "Create a sandbox account",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts/post"
+      },
+      {
+        "operation_id": "assignAccountProfile",
+        "method": "PATCH",
+        "path": "/api/v1/accounts/{id}",
+        "summary": "Move an account to a customer profile",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}/patch"
+      },
+      {
+        "operation_id": "disconnectAccount",
+        "method": "DELETE",
+        "path": "/api/v1/accounts/{id}",
+        "summary": "Disconnect an account",
+        "api_key_scopes": [
+          "accounts:write"
+        ],
+        "oauth_scopes": [
+          "accounts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}/delete"
+      },
+      {
+        "operation_id": "getPublishingOptions",
+        "method": "GET",
+        "path": "/api/v1/accounts/{id}/publishing-options",
+        "summary": "Get current creator publishing controls",
+        "api_key_scopes": [
+          "accounts:read"
+        ],
+        "oauth_scopes": [
+          "accounts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1accounts~1{id}~1publishing-options/get"
+      },
+      {
+        "operation_id": "listPosts",
+        "method": "GET",
+        "path": "/api/v1/posts",
+        "summary": "List posts",
+        "api_key_scopes": [
+          "posts:read"
+        ],
+        "oauth_scopes": [
+          "posts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts/get"
+      },
+      {
+        "operation_id": "createPost",
+        "method": "POST",
+        "path": "/api/v1/posts",
+        "summary": "Queue or schedule a post",
+        "api_key_scopes": [
+          "posts:write"
+        ],
+        "oauth_scopes": [
+          "posts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": true,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts/post"
+      },
+      {
+        "operation_id": "getPost",
+        "method": "GET",
+        "path": "/api/v1/posts/{id}",
+        "summary": "Retrieve post and destination results",
+        "api_key_scopes": [
+          "posts:read"
+        ],
+        "oauth_scopes": [
+          "posts:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts~1{id}/get"
+      },
+      {
+        "operation_id": "cancelPost",
+        "method": "DELETE",
+        "path": "/api/v1/posts/{id}",
+        "summary": "Cancel queued or scheduled delivery",
+        "api_key_scopes": [
+          "posts:write"
+        ],
+        "oauth_scopes": [
+          "posts:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts~1{id}/delete"
+      },
+      {
+        "operation_id": "listMedia",
+        "method": "GET",
+        "path": "/api/v1/media",
+        "summary": "List uploaded media",
+        "api_key_scopes": [
+          "media:read"
+        ],
+        "oauth_scopes": [
+          "media:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media/get"
+      },
+      {
+        "operation_id": "createMediaUpload",
+        "method": "POST",
+        "path": "/api/v1/media/uploads",
+        "summary": "Create a direct upload",
+        "api_key_scopes": [
+          "media:write"
+        ],
+        "oauth_scopes": [
+          "media:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1uploads/post"
+      },
+      {
+        "operation_id": "getMedia",
+        "method": "GET",
+        "path": "/api/v1/media/{id}",
+        "summary": "Retrieve uploaded media metadata",
+        "api_key_scopes": [
+          "media:read"
+        ],
+        "oauth_scopes": [
+          "media:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}/get"
+      },
+      {
+        "operation_id": "deleteMedia",
+        "method": "DELETE",
+        "path": "/api/v1/media/{id}",
+        "summary": "Delete unused uploaded media",
+        "api_key_scopes": [
+          "media:write"
+        ],
+        "oauth_scopes": [
+          "media:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}/delete"
+      },
+      {
+        "operation_id": "completeMediaUpload",
+        "method": "POST",
+        "path": "/api/v1/media/{id}/complete",
+        "summary": "Verify and freeze an uploaded file",
+        "api_key_scopes": [
+          "media:write"
+        ],
+        "oauth_scopes": [
+          "media:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}~1complete/post"
+      },
+      {
+        "operation_id": "downloadMedia",
+        "method": "GET",
+        "path": "/api/v1/media/{id}/content",
+        "summary": "Read private media bytes",
+        "api_key_scopes": [
+          "media:read"
+        ],
+        "oauth_scopes": [
+          "media:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}~1content/get"
+      },
+      {
+        "operation_id": "headMedia",
+        "method": "HEAD",
+        "path": "/api/v1/media/{id}/content",
+        "summary": "Read private media headers",
+        "api_key_scopes": [
+          "media:read"
+        ],
+        "oauth_scopes": [
+          "media:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1media~1{id}~1content/head"
+      },
+      {
+        "operation_id": "listPostAnalytics",
+        "method": "GET",
+        "path": "/api/v1/analytics/posts",
+        "summary": "List post performance snapshots",
+        "api_key_scopes": [
+          "analytics:read"
+        ],
+        "oauth_scopes": [
+          "analytics:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1analytics~1posts/get"
+      },
+      {
+        "operation_id": "getAnalyticsSummary",
+        "method": "GET",
+        "path": "/api/v1/analytics/summary",
+        "summary": "Aggregate post performance snapshots",
+        "api_key_scopes": [
+          "analytics:read"
+        ],
+        "oauth_scopes": [
+          "analytics:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1analytics~1summary/get"
+      },
+      {
+        "operation_id": "refreshPostAnalytics",
+        "method": "POST",
+        "path": "/api/v1/posts/{id}/analytics/refresh",
+        "summary": "Refresh post performance",
+        "api_key_scopes": [
+          "analytics:write"
+        ],
+        "oauth_scopes": [
+          "analytics:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1posts~1{id}~1analytics~1refresh/post"
+      },
+      {
+        "operation_id": "listComments",
+        "method": "GET",
+        "path": "/api/v1/comments",
+        "summary": "List comments for a published destination",
+        "api_key_scopes": [
+          "comments:read"
+        ],
+        "oauth_scopes": [
+          "comments:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1comments/get"
+      },
+      {
+        "operation_id": "replyComment",
+        "method": "POST",
+        "path": "/api/v1/comments",
+        "summary": "Reply to a comment",
+        "api_key_scopes": [
+          "comments:write"
+        ],
+        "oauth_scopes": [
+          "comments:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1comments/post"
+      },
+      {
+        "operation_id": "listWebhooks",
+        "method": "GET",
+        "path": "/api/v1/webhooks",
+        "summary": "List event endpoints",
+        "api_key_scopes": [
+          "webhooks:read"
+        ],
+        "oauth_scopes": [
+          "webhooks:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1webhooks/get"
+      },
+      {
+        "operation_id": "createWebhook",
+        "method": "POST",
+        "path": "/api/v1/webhooks",
+        "summary": "Create an event endpoint",
+        "api_key_scopes": [
+          "webhooks:write"
+        ],
+        "oauth_scopes": [
+          "webhooks:write"
+        ],
+        "read_only": false,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1webhooks/post"
+      },
+      {
+        "operation_id": "disableWebhook",
+        "method": "DELETE",
+        "path": "/api/v1/webhooks/{id}",
+        "summary": "Disable an event endpoint",
+        "api_key_scopes": [
+          "webhooks:write"
+        ],
+        "oauth_scopes": [
+          "webhooks:write"
+        ],
+        "read_only": false,
+        "destructive": true,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1webhooks~1{id}/delete"
+      },
+      {
+        "operation_id": "listDeliveries",
+        "method": "GET",
+        "path": "/api/v1/deliveries",
+        "summary": "Inspect webhook delivery attempts",
+        "api_key_scopes": [
+          "webhooks:read"
+        ],
+        "oauth_scopes": [
+          "webhooks:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1deliveries/get"
+      },
+      {
+        "operation_id": "listRequestLogs",
+        "method": "GET",
+        "path": "/api/v1/logs",
+        "summary": "List API request logs",
+        "api_key_scopes": [
+          "logs:read"
+        ],
+        "oauth_scopes": [
+          "logs:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1logs/get"
+      },
+      {
+        "operation_id": "getUsage",
+        "method": "GET",
+        "path": "/api/v1/usage",
+        "summary": "Get current usage and allowances",
+        "api_key_scopes": [],
+        "oauth_scopes": [
+          "usage:read"
+        ],
+        "read_only": true,
+        "destructive": false,
+        "idempotency_key_required": false,
+        "schema_ref": "https://castrook.com/api/openapi#/paths/~1usage/get"
+      }
+    ]
+  },
+  "oauth": {
+    "issuer": "https://castrook.com",
+    "metadata": "https://castrook.com/.well-known/oauth-authorization-server",
+    "authorization_endpoint": "https://castrook.com/oauth/authorize",
+    "registration_endpoint": "https://castrook.com/oauth/register",
+    "token_endpoint": "https://castrook.com/oauth/token",
+    "revocation_endpoint": "https://castrook.com/oauth/revoke",
+    "grant_types": [
+      "authorization_code",
+      "refresh_token"
+    ],
+    "pkce": "S256",
+    "public_client_authentication": "none"
+  },
+  "documentation": {
+    "index": "https://castrook.com/llms.txt",
+    "full": "https://castrook.com/llms-full.txt",
+    "guides": [
+      {
+        "id": "mcp",
+        "title": "Castrook MCP",
+        "version": "2026-10-02",
+        "url": "https://castrook.com/guides/mcp.md",
+        "human_url": "https://castrook.com/docs/mcp"
+      },
+      {
+        "id": "cli",
+        "title": "Castrook CLI",
+        "version": "2026-10-02",
+        "url": "https://castrook.com/guides/cli.md",
+        "human_url": "https://castrook.com/docs/cli"
+      },
+      {
+        "id": "typescript",
+        "title": "Castrook TypeScript SDK",
+        "version": "2026-10-02",
+        "url": "https://castrook.com/guides/typescript.md",
+        "human_url": "https://castrook.com/docs/sdk"
+      },
+      {
+        "id": "python",
+        "title": "Castrook Python SDK",
+        "version": "2026-10-02",
+        "url": "https://castrook.com/guides/python.md",
+        "human_url": "https://castrook.com/docs/python"
+      },
+      {
+        "id": "skills",
+        "title": "Castrook integration skills",
+        "version": "2026-10-02",
+        "url": "https://castrook.com/guides/skills.md",
+        "human_url": "https://castrook.com/docs/skills"
+      },
+      {
+        "id": "workflows",
+        "title": "Castrook task contract",
+        "version": "2026-10-02",
+        "url": "https://castrook.com/guides/workflows.md",
+        "human_url": "https://castrook.com/docs/reference"
+      }
+    ]
+  },
+  "distribution": {
+    "version": "0.4.0",
+    "npm": {
+      "name": "castrook",
+      "published": false,
+      "tarball": "/downloads/castrook-0.4.0.tgz"
+    },
+    "python": {
+      "name": "castrook",
+      "published": false,
+      "wheel": "/downloads/castrook-0.4.0-py3-none-any.whl"
+    },
+    "skills": {
+      "repository": "lvnr/castrook-tools",
+      "public": false,
+      "url": "https://github.com/lvnr/castrook-tools"
+    }
+  },
+  "defaults": {
+    "mode": "test",
+    "posting": "asynchronous",
+    "unrequested_write_scopes": false
+  },
+  "limitations": {
+    "tiktok_comments": "unsupported",
+    "missing_metrics": "unavailable, never invented zero",
+    "provider_approval": "per app, permission and provider; consult /docs/platforms#status",
+    "youtube_analytics": "explicit current account-owner privacy acceptance",
+    "live_publication": "authorized exact content and creator controls; OAuth alone is not TikTok per-post consent"
+  }
+}

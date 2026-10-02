@@ -1,0 +1,10 @@
+import { readFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import assert from "node:assert/strict";
+const expected = new Set(JSON.parse(readFileSync("distribution-files.json", "utf8")).files);
+const actual = execFileSync("git", ["ls-files", "-z"], {encoding: "utf8"}).split("\0").filter(Boolean);
+assert(actual.length > 0, "No tracked public distribution files");
+for (const path of actual) assert(expected.has(path), `Unexpected public file: ${path}`);
+for (const path of expected) assert(actual.includes(path), `Missing distribution file: ${path}`);
+assert(!actual.some(path => /^(?:convex|src|artifacts|\.varel|\.vercel)\//.test(path) || path.startsWith(".env")));
+console.log(`Verified ${actual.length} public distribution files against the export allowlist.`);

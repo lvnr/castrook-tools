@@ -1,0 +1,7 @@
+{
+  "text": "Hello from Castrook.",
+  "account_ids": ["acc_replace_with_your_test_account_id"],
+  "platform_options": {
+    "facebook": { "sandbox_outcome": "published" }
+  }
+}

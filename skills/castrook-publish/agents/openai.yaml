@@ -1,0 +1,4 @@
+interface:
+  display_name: "Publish with Castrook"
+  short_description: "Validate content, schedule and track delivery safely"
+  default_prompt: "Use $castrook-publish to prepare and publish the authorized content with durable media and traceable delivery."

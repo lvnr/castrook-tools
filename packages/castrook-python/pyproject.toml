@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "castrook"
+version = "0.4.0"
+description = "Typed sync and async Python client for the Castrook social publishing API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Castrook" }]
+keywords = ["castrook", "social-media", "publishing", "api", "async", "sdk"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = ["httpx>=0.28.1,<1", "typing-extensions>=4.12,<5"]
+
+[project.urls]
+Homepage = "https://castrook.com"
+Documentation = "https://castrook.com/docs"
+"API reference" = "https://castrook.com/openapi.json"
+Repository = "https://github.com/lvnr/castrook-tools"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2", "mypy>=1.15,<2", "build>=1.2,<2", "ruff>=0.11,<1", "twine>=6,<7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/castrook"]
+core-metadata-version = "2.4"
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE", "pyproject.toml"]
+core-metadata-version = "2.4"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src/castrook"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

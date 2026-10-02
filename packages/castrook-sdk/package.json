@@ -1,0 +1,19 @@
+{
+  "name": "castrook",
+  "version": "0.4.0",
+  "description": "TypeScript SDK and CLI for the Castrook publishing API",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": { "castrook": "./dist/cli.js" },
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=20.3.0" },
+  "scripts": { "build": "tsc -p tsconfig.json", "prepack": "npm run build" },
+  "devDependencies": { "@types/node": "^20", "typescript": "^5" },
+  "publishConfig": { "access": "public" },
+  "homepage": "https://castrook.com/docs/sdk",
+  "repository": { "type": "git", "url": "git+https://github.com/lvnr/castrook-tools.git", "directory": "packages/castrook-sdk" },
+  "keywords": ["castrook", "social-media", "publishing", "tiktok", "instagram", "cli"],
+  "license": "MIT"
+}
