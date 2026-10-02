@@ -6,7 +6,7 @@ Human guide: https://castrook.com/docs/skills
 
 ## Install
 
-The source repository is lvnr/castrook-tools. Public-source verification is pending; use the installation command only once repository access is confirmed:
+The public source repository is lvnr/castrook-tools. Install its product-owned integration skills:
 
 ```sh
 npx skills add lvnr/castrook-tools

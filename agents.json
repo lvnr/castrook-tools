@@ -1246,7 +1246,7 @@
     },
     "skills": {
       "repository": "lvnr/castrook-tools",
-      "public": false,
+      "public": true,
       "url": "https://github.com/lvnr/castrook-tools"
     }
   },
