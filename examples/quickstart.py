@@ -13,4 +13,5 @@ with Castrook(api_key=os.environ["CASTROOK_API_KEY"]) as api:
             "facebook": {"sandbox_outcome": "published"}
         },
     }, idempotency_key="api-demo-first-post-v1")["data"]
-    print(post["id"], post["status"])
+    result = api.posts.wait(post["id"], timeout=300, poll_interval=1)["data"]
+    print(result["status"], result["targets"])

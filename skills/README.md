@@ -20,4 +20,3 @@ Skills contain no credentials and grant no account access. Authenticate through 
 Maintained contract: https://castrook.com/guides/workflows.md. Schemas: https://castrook.com/api/openapi. Machine manifest: https://castrook.com/agents.json.
 
 Each skill includes discoverable `SKILL.md` frontmatter and `agents/openai.yaml` metadata. No third-party skills or private SaaS source are included.
-
