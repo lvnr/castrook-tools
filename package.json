@@ -8,8 +8,10 @@
   "scripts": {
     "build": "npm run build --workspace castrook",
     "test": "vitest run",
-    "check": "npm run build && npm test && node scripts/check-contract.mjs",
-    "pack": "npm pack --workspace castrook --pack-destination dist"
+    "check": "node scripts/local-release.mjs check",
+    "release:prepare": "node scripts/local-release.mjs prepare",
+    "release:verify": "node scripts/local-release.mjs verify",
+    "pack": "npm run release:prepare"
   },
   "devDependencies": { "vitest": "4.1.11" }
 }

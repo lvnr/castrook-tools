@@ -8,16 +8,16 @@ Human guide: https://castrook.com/docs/cli
 
 Requires Node.js 20.3 or later.
 
-The target npm release is castrook@0.4.0, including the TypeScript SDK and CLI. Registry publication is pending until verified. Use the downloadable package:
+castrook@0.4.0 includes the TypeScript SDK and CLI. Registry installation is verified:
 
 ```sh
-npm install -g https://castrook.com/downloads/castrook-0.4.0.tgz
+npm install -g castrook@0.4.0
 castrook login
 castrook accounts list --json
 castrook usage --json
 ```
 
-After the npm release is verified, use npm install -g castrook@0.4.0 or npx castrook login. Login uses OAuth authorization-code + PKCE, defaults to Test and does not require copying an API key. Inspect app, callback, workspace, mode and permissions in the browser. Write scopes are unchecked until you select them.
+You can also run npx castrook login without a global install. Login uses OAuth authorization-code + PKCE, defaults to Test and does not require copying an API key. Inspect app, callback, workspace, mode and permissions in the browser. Write scopes are unchecked until you select them.
 
 To create a new simulated account and post, request --scopes "accounts:read accounts:write posts:read posts:write usage:read" and explicitly select the write scopes. accounts create-test --data @account.json accepts {"platform":"facebook","name":"API demo"}.
 

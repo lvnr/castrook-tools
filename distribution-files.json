@@ -1,7 +1,6 @@
 {
   "files": [
     ".github/workflows/ci.yml",
-    ".github/workflows/publish.yml",
     ".gitignore",
     "LICENSE",
     "README.md",
@@ -47,10 +46,13 @@
     "packages/castrook-sdk/src/cli.ts",
     "packages/castrook-sdk/src/index.ts",
     "packages/castrook-sdk/tsconfig.json",
+    "scripts/check-artifacts.py",
     "scripts/check-contract.mjs",
     "scripts/check-export.mjs",
     "scripts/check-skills.py",
+    "scripts/local-release.mjs",
     "scripts/package-smoke.mjs",
+    "scripts/test-release-artifacts.py",
     "skills/README.md",
     "skills/castrook-connect/SKILL.md",
     "skills/castrook-connect/agents/openai.yaml",

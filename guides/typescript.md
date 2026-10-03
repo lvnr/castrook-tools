@@ -6,13 +6,13 @@ Human guide: https://castrook.com/docs/sdk
 
 ## Installation
 
-castrook@0.4.0, MIT, Node.js 20.3+ and modern server runtimes. This package includes the CLI. Registry publication is pending until verified; install the release tarball:
+castrook@0.4.0, MIT, Node.js 20.3+ and modern server runtimes. This package includes the CLI. Registry installation is verified; the release tarball also remains available.
 
 ```sh
-npm install https://castrook.com/downloads/castrook-0.4.0.tgz
+npm install castrook@0.4.0
 ```
 
-After registry verification: npm install castrook@0.4.0. Import from castrook. Existing @castrook/sdk 0.2/0.3 tarballs remain compatibility artifacts; new projects use castrook.
+Import from castrook. Existing @castrook/sdk 0.2/0.3 tarballs remain compatibility artifacts; new projects use castrook.
 
 ## Initialize
 
